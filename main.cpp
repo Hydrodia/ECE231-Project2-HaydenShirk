@@ -15,6 +15,7 @@ int main(){
 	physics_students.push_back(new Physics_student);
     }
 
+    //assign values to each student
     art_students[0]->setName("John", "Smith");
     art_students[0]->setGPA(3.5);
     art_students[0]->setGradYear(2028);

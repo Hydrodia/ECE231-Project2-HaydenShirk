@@ -30,7 +30,8 @@ class Student{
 	    enrolledSemester = "Unknown";
 	    studentLevel = "undergraduate";
 	}
-    
+   
+    //virtual destructor	
     virtual ~Student() = default;
 
     //setters
@@ -98,7 +99,7 @@ class Student{
 	return studentLevel;
     }
 
-    //write out common student info
+    //write out common student info to file
     virtual void writeToFile(ostream& out) const{
 	out << "Name: " << firstName << " " << lastName << "\n";
 	out << "GPA: " << gpa << "\n";
@@ -121,16 +122,19 @@ class Art_student : public Student{
 
 	~Art_student() override = default;
 
+	//setter
 	void setArtEmphasis(string emphasis){
 	    if(emphasis == "Art Studio" || emphasis == "Art History" || emphasis == "Art Education"){
 		artEmphasis = emphasis;
 	    }
 	}
 
+	//getter
 	string getArtEmphasis() const{
 	   return artEmphasis;
 	}
 
+	//write to file
 	void writeToFile(ostream& out){
 	    out << "Program: Art\n";
 
@@ -152,16 +156,19 @@ class Physics_student : public Student{
 
         ~Physics_student() override = default;
 
+	//setter
         void setConcentration(string value){
             if(concentration == "Biophysics" || concentration == "Earth and Planetary Sciences"){
                 concentration = value;
             }
         }
 
+	//getter
         string getConcentration() const{
            return concentration;
         }
 
+	//write to file
         void writeToFile(ostream& out){
             out << "Program: Physics\n";
 
